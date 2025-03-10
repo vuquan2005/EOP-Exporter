@@ -36,19 +36,22 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 });
 
 // Click button Export Vocabulary
-document.getElementById("exportVocabulary").addEventListener("click", () => {
+document.getElementById("exportVocab").addEventListener("click", () => {
 	chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
 		chrome.tabs.sendMessage(tabs[0].id, {
-			action: "clickBtnExportVocabulary",
+			action: "clickBtnExportVocab",
 		});
 	});
 });
 
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-    if (msg.action === "exportVocabulary") {
+    if (msg.action === "exportVocab") {
         const data = msg.data;
         
         let text = "";
+        data.forEach((item) => {
+            text += `${item.question}\n`;
+        });
         
         textarea.value = text += "\n";
         autoCopy();
@@ -69,7 +72,10 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         const data = msg.data;
         
         let text = "";
-        
+        data.forEach((item) => {
+            text += `${item.question}\n`;
+        });
+
         textarea.value = text += "\n";
         autoCopy();
     }
