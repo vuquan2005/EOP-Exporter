@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "EOP Helper",
+  "name": "EOP Exporter",
   "version": "1.0",
   "description": "A simple Chrome extension named EOP that works on EOP.",
   "permissions": [
