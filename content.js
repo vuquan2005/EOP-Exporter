@@ -26,8 +26,13 @@ const exportNewWord = () => {
 
         // get the text content from b tags
         let meaning = item.querySelector('b').textContent;
-        // get the text content from p tags
-        let example = item.querySelectorAll('p')[1].textContent;
+        // duyệt qua toàn bộ thẻ p và lấy ra thẻ p không null
+        let example = '';
+        item.querySelectorAll('p').forEach((p) => {
+                if (p.textContent !== '') {
+                    example = p.textContent;
+                }
+            });
 
         // push the data to the array
         dataArr.push({
@@ -37,15 +42,14 @@ const exportNewWord = () => {
             example
         });
     });
-    
-    //log the data to the console
+
+    // log the data to the console
     console.log(dataArr);
 
-    //send the data to the popup
-    //send message to popup.js
+    // send the data to the popup
+    // send message to popup.js
     chrome.runtime.sendMessage({action: 'exportNewWord', data: dataArr});
-
-
-    //<div class="ditem"> <h4><i class="fa fa-play-circle daudio" rel="e201bb3c371fd1abec42" media-url="//c.eop.edu.vn/desktop/dictionary/1849/462d5104332t5737l0.mp3"></i>&nbsp;Band saw/ bandsaw</h4> <div class="minhhoa"> <i>/ˈbændsɔː/</i> <img src="//c.eop.edu.vn/media/auto/120/dictionary/1849/462d5104328t6037l6.png" style="border: 1px solid rgb(254, 254, 254);"> </div> <p><b>Cưa máy</b></p><br> <p>The most common use for the band saw is in cutting irregular shapes.</p> </div>
 };
+    //<div class="ditem"> <h4><i class="fa fa-play-circle daudio" rel="e201bb3c371fd1abec42" media-url="//c.eop.edu.vn/desktop/dictionary/1849/462d5104332t5737l0.mp3"></i>&nbsp;Band saw/ bandsaw</h4> <div class="minhhoa"> <i>/ˈbændsɔː/</i> <img src="//c.eop.edu.vn/media/auto/120/dictionary/1849/462d5104328t6037l6.png" style="border: 1px solid rgb(254, 254, 254);"> </div> <p><b>Cưa máy</b></p><br> <p>The most common use for the band saw is in cutting irregular shapes.</p> </div>
+
 
