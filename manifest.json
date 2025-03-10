@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "EOP Helper",
+  "version": "1.0",
+  "description": "A simple Chrome extension named EOP that works on EOP.",
+  "permissions": [
+    "tabs",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "32": "assets/icon32.png",
+      "64": "assets/icon64.png",
+      "128": "assets/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "32": "assets/icon32.png",
+    "64": "assets/icon64.png",
+    "128": "assets/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://eop.edu.vn/study/*"
+      ],
+      "js": [
+        "scripts/lib/tesseract.min.js",
+        "content.js",
+        "scripts/auto.js",
+        "popup/popup.js"]
+    }
+  ]
+}
