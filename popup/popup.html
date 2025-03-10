@@ -1,47 +1,22 @@
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Popup</title>
+        <link rel="stylesheet" type="text/css" href="popup.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup</title>
-    <link rel="stylesheet" type="text/css" href="popup.css">
-</head>
+    <body>
+        <button id="exportNewWord">Export new word</button>
+        <button id="exportVocab">Export vocabulary</button>
+        <button id="exportGrammar">Export grammar</button>
+        <textarea
+            id="data"
+            cols="50"
+            rows="30"
+            placeholder="EOP Data"
+        ></textarea>
 
-<body>
-
-    <div class="container">
-        <div class="header">
-            <h1>Chào mừng bạn đến với EOP Helper</h1>
-        </div>
-        <div class="content">
-            <div class="setting-item">
-                <label for="darkModeToggle">Task clock</label>
-                <label class="switch">
-                    <input type="checkbox" id="taskClock">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div class="setting-item">
-                <label for="darkModeToggle">Session clock</label>
-                <label class="switch">
-                    <input type="checkbox" id="sessionClock">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-            <div class="setting-item">
-                <label for="darkModeToggle">EOP clock</label>
-                <label class="switch">
-                    <input type="checkbox" id="totalClock">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>Theo dõi thêm trên <a href="https://github.com/vuquan2005/EOP-Helper">github</a></p>
-    </footer>
-
-    <script src="popup.js"></script>
-
+        <script src="popup.js"></script>
+    </body>
 </html>
