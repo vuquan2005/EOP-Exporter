@@ -54,10 +54,10 @@ const exportVocab = () => {
 	data.forEach((item) => {
 		let question = item.textContent;
 		if (question && question !== " ") {
-			// nếu kí tự đầu không phải là số thì push question vào phần tử trước đó
 			if (isNaN(question.charAt(0))) {
-				dataArr[dataArr.length - 1].question += "\n" + question;
+				dataArr[dataArr.length - 1].question += "\\n" + question;
 			} else {
+				question = question.replace(/^\d{1,3}\.\s/, "");
 				dataArr.push({
 					question,
 				});
