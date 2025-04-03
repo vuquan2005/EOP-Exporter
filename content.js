@@ -23,6 +23,8 @@ const exportNewWord = () => {
 	data.forEach((item) => {
 		let newWord = item.querySelector("h4").textContent;
 		newWord = newWord.slice(1);
+		//Viết hoa chữ cái đầu tiên
+		newWord = newWord.replace(/\b\w/gy, (char) => char.toUpperCase());
 		let phonetic = item
 			.querySelector("div.minhhoa")
 			.querySelector("i").textContent;

@@ -1,4 +1,5 @@
 const textarea = document.getElementById("data");
+var newWordData;
 
 const autoCopy = () => {
 	textarea.select();
@@ -17,6 +18,7 @@ document.getElementById("exportNewWord").addEventListener("click", () => {
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 	if (msg.action === "exportNewWord") {
 		const data = msg.data;
+		newWordData = msg.data;
 		// dataArr.push({
 		//     newWord,
 		//     phonetic,
@@ -80,3 +82,17 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         autoCopy();
     }
 });
+
+// Click button Export new word only
+document.getElementById("exportNewWordOnly").addEventListener("click", () => {
+	let text = "";
+	textarea.value = "";
+	newWordData.forEach((item) => {
+		//create cloze replace all character in newWord to _, no replace the first character and space
+		const cloze = item.newWord.replace(/[^ ]/g, "_");
+		text += `${item.newWord}	${item.meaning}\n`;
+	});
+	textarea.value = text += "\n";
+	autoCopy();
+});
+

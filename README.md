@@ -14,7 +14,7 @@
 ### 2. Cài đặt extension vào Chrome
 1. Mở trình duyệt Google Chrome.
 2. Truy cập vào trang **chrome://extensions**.
-3. Bật chế độ **DChế độ Nhà phát triển**  ở góc trên bên phải của trang.
+3. Bật chế độ **Chế độ Nhà phát triển**  ở góc trên bên phải của trang.
 4. Nhấn vào nút **Tải phần mở rộng đã giải nén**
 5. Chọn thư mục mà bạn đã giải nén trước đó.
 6. Extension sẽ tự động được cài đặt và hiển thị trên thanh công cụ của trình duyệt.
