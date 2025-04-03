@@ -2,7 +2,7 @@
 	"manifest_version": 3,
 	"name": "EOP Exporter",
 	"version": "1.0",
-	"description": "A simple Chrome extension named EOP that works on EOP.",
+	"description": "Trình mở rộng xuất dữ liệu các task từ EOP",
 	"permissions": ["tabs", "scripting", "activeTab"],
 	"action": {
 		"default_popup": "popup/popup.html",
